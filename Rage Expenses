@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Rage_10 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int lostGameCount = Integer.parseInt(scanner.nextLine());
+        double headsetPrice = Double.parseDouble(scanner.nextLine());
+        double mousePrice = Double.parseDouble(scanner.nextLine());
+        double keybordPrice = Double.parseDouble(scanner.nextLine());
+        double displayPrice = Double.parseDouble(scanner.nextLine());
+
+        double expences = (lostGameCount / 2 ) * headsetPrice + (lostGameCount / 3) * mousePrice + (lostGameCount / 6) * keybordPrice + (lostGameCount / 12 ) * displayPrice;
+
+        System.out.println(String.format("Rage expenses: %.2f lv.", expences));
+    }
+}
