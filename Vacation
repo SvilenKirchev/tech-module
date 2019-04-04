@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class vacation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int countStudents = Integer.parseInt(scanner.nextLine());
+        String typeTicket = scanner.nextLine();
+        String day = scanner.nextLine();
+        double ticketPrice = 0;
+        switch (day){
+            case "Friday":
+                if ("Students".equals(typeTicket)){
+                    ticketPrice = 8.45;
+                }else if ("Business".equals(typeTicket)){
+                    ticketPrice = 10.90;
+                }else if ("Regular".equals(typeTicket)){
+                    ticketPrice = 15;
+                }
+                break;
+            case "Saturday":
+                if ("Students".equals(typeTicket)){
+                    ticketPrice = 9.80;
+                }else if ("Business".equals(typeTicket)){
+                    ticketPrice = 15.60;
+                }else if ("Regular".equals(typeTicket)){
+                    ticketPrice = 20;
+                }
+                break;
+            case "Sunday":
+                if ("Students".equals(typeTicket)){
+                    ticketPrice = 10.46;
+                }else if ("Business".equals(typeTicket)){
+                    ticketPrice = 16;
+                }else if ("Regular".equals(typeTicket)){
+                    ticketPrice = 22.50;
+                }
+                break;
+        }
+        double allPrice = ticketPrice * countStudents;
+        if (countStudents >= 30 && "Students".equals(typeTicket)){
+            allPrice = allPrice * 0.85;
+        }else if (countStudents >= 100 && "Business".equals(typeTicket)){
+            allPrice = allPrice - (10 * ticketPrice);
+        }else if (countStudents >= 10 && countStudents <= 20 && "Regular".equals(typeTicket)){
+            allPrice = allPrice *0.95;
+        }
+        System.out.printf("Total price: %.2f",allPrice);
+    }
+}
